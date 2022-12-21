@@ -1,0 +1,125 @@
+﻿<Window x:Class="ConnectivityAppWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConnectivityAppWPF"
+        mc:Ignorable="d"
+        Title="Connectivity Application" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Column="0"
+                   Background="LightGray">
+
+            <Button Width="50"
+                    Height="25"
+                    x:Name="CloseBtn"
+                    Click="CloseBtn_Click"
+                    Content="Quit"
+                    DockPanel.Dock="Right"
+                    Margin="0,0,5,0"/>
+
+            <Button Width="70"
+                    Height="25"
+                    x:Name="OpenFile"
+                    Content="Open File"
+                    DockPanel.Dock="Left"
+                    Margin="5,0,0,0" 
+                    Click="OpenFile_Click"/>
+            <DockPanel />
+
+        </DockPanel>
+
+        <ListView Grid.Row="1"
+                      Grid.ColumnSpan="2"
+                      x:Name="VypisLV"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                       Foreground="Black"
+                                       Text="{Binding DeviceLocation}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="1"
+                                       Foreground="Black"
+                                       Text="{Binding Station}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="2"
+                                       Foreground="Black"
+                                       Text="{Binding DeviceType}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="3"
+                                       Foreground="Black"
+                                       Text="{Binding DeviceID}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="4"
+                                       Foreground="Black"
+                                       Text="{Binding ControlUnit}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="5"
+                                       Foreground="Black"
+                                       Text="{Binding PLCrevision}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="6"
+                                       Foreground="Black"
+                                       Text="{Binding IoTport}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="7"
+                                       Foreground="Black"
+                                       Text="{Binding IPadress}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="8"
+                                       Foreground="Black"
+                                       Text="{Binding MacAdress}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="9"
+                                       Foreground="Black"
+                                       Text="{Binding LastBackUp}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="10"
+                                       Foreground="Black"
+                                       Text="{Binding Link}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                        <TextBlock Grid.Column="11"
+                                       Foreground="Black"
+                                       Text="{Binding Comment}"
+                                       ToolTip="{Binding}"
+                                       Margin="0,0,10,0" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Window>
